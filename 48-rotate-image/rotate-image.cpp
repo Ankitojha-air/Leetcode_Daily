@@ -6,16 +6,13 @@ public:
         
         vector<vector<int>> arr(n, vector<int>(m));
 
-       for(int i=0; i < n ; i++){
-        for(int j = 0; j < m; j++){
-            arr[i][j] = nums[n-j-1][i];
-        }
-       }
-
         for(int i = 0; i < n; i++) {
-            for(int j = 0; j < m; j++) {
-                nums[i][j] = arr[i][j];
+            for(int j = i + 1; j < n; j++) {
+                swap(nums[i][j],nums[j][i]);
             }
+        }
+        for(int i=0; i < n; i++){
+            reverse(nums[i].begin(),nums[i].end());
         }
     }
 };
