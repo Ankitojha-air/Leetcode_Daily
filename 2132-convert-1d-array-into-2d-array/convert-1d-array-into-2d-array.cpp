@@ -4,18 +4,23 @@ public:
 
         if (original.size() != m * n)
             return {};
-            
+
         vector<vector<int>> arr(m, vector<int>(n));
 
-        int k =0 ;
+        //int k =0 ;
 
-        for(int i =0; i < m; i++){
-            for(int j=0; j < n; j++){
-                arr[i][j] = original[k];
-                k++;
+        //for(int i =0; i < m; i++){
+          //  for(int j=0; j < n; j++){
+             //   arr[i][j] = original[k];
+             //   k++;
 
-            }
-        }
+             for (int i = 0; i < original.size(); i++) {
+                    arr[i / n][i % n] = original[i];
+             }
+        
+
+            
+        
         return arr;
         
     }
