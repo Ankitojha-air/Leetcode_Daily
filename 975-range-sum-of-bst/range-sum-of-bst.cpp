@@ -11,19 +11,19 @@
  */
 class Solution {
 public:
-    void inorder(TreeNode* root, vector<int>& arr) {
+    void postorder(TreeNode* root, vector<int>& arr) {
         if (root == NULL)
             return;
 
-        inorder(root->left, arr);
+        postorder(root->left, arr);
+        postorder(root->right, arr);
         arr.push_back(root->val);
-        inorder(root->right, arr);
     }
 
     int rangeSumBST(TreeNode* root, int low, int high) {
         vector<int> arr;
 
-        inorder(root, arr);
+        postorder(root, arr);
 
         int sum = 0;
 
