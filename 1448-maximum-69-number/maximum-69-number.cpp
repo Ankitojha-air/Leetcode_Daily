@@ -9,7 +9,9 @@ public:
             arr.push_back(digit);
             n /=10;
         }
-        for(int i = arr.size()-1; i >= 0; i--){
+        reverse(arr.begin() , arr.end());
+        
+        for(int i =0 ;i < arr.size(); i++){
             if(arr[i] == 9){
                 continue;
             }
@@ -19,8 +21,8 @@ public:
             }
         }
         int x=0;
-        for(int i =arr.size()-1 ; i >=0; i--){
-            x =x *10 +arr[i];
+        for(int i=0; i < arr.size();i++){
+            x = x *10 +arr[i];
             
         }
         return x;
