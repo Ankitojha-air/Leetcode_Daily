@@ -22,7 +22,7 @@ public:
         prev ->next = newNode;
         newNode->next = curr;
         prev=curr;
-        curr = prev->next;
+        curr = curr->next;
         }
         return head;
     }
