@@ -2,7 +2,7 @@ class Solution {
 public:
     int maxSum(vector<int>& nums, int k) {
         vector<int>count(32,0);
-        int mod = 1e9 + 7;
+    
         long long sum =0;
 
         for(int n : nums){
@@ -20,7 +20,7 @@ public:
                 }
                 
             }
-            sum = (sum + curr * curr) % mod;
+            sum = (sum + curr * curr) % (1000000000 + 7);
         }
         return sum;
       
