@@ -8,6 +8,7 @@ public:
             ans += to_string(digit);
             sum -= digit;
         }
+        if(sum > 0) return "";
         return ans;
     }
 };
